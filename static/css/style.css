@@ -1,0 +1,267 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  color: #ffffff;
+  background-color: grey;
+}
+
+.nav {
+  background-color: #0c457d;
+}
+
+.brand-logo {
+  font-weight: 600;
+  margin-left: 20px;
+  display: flex;
+  color: green;
+}
+
+nav .brand-logo i {
+  float: right;
+  margin-left: 10px;
+}
+
+nav .button-collapse {
+  float: right;
+}
+
+.filter-nav {
+  background-color: grey;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*Containers*/
+.login,
+.signup,
+.category,
+.post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container {
+  background-color: whitesmoke;
+  margin: 40px;
+  padding: 20px;
+  border-radius: 4px;
+  color: #000;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+
+}
+
+.post_container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+}
+
+.post-detail-container {
+  background-color: #ffffff;
+  margin: 40px;
+  padding: 20px;
+  border-radius: 4px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card {
+  background: #fff;
+  color: #000000;
+  border-radius: 4px;
+  height: 450px;
+  width: 400px;
+  padding: 30px;
+  margin: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.cta {
+  height: 200px;
+  margin: 0px 30px;
+}
+
+.heading_container,
+.post-contents {
+  flex-direction: row;
+  display: flex;
+}
+
+.category_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.button_container {
+  margin-left: 40px;
+  align-self: flex-end;
+}
+
+.padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.category {
+  margin: 0px 10px;
+}
+
+/*Headings*/
+.heading {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.post-title {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+a {
+  color: #000;
+}
+
+.post-header {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/*Text*/
+.instruction {
+  font-size: 1.5rem;
+}
+
+.post-stat {
+  display: flex;
+}
+
+.ingredient {
+  text-transform: capitalize;
+}
+
+/*Form*/
+.login-form,
+.category-form {
+  width: 60%;
+}
+
+.action-button {
+  margin-top: 30px;
+}
+
+.filter-btn {
+  margin-right: 20px;
+}
+
+.add-post {
+  width: 100%;
+}
+
+.add-post-fields {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.switch {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.post-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.edit,
+.delete {
+  margin: 20px;
+}
+
+/*Images*/
+.post_image {
+  width: 250px;
+  height: 200px;
+  border-radius: 4px;
+  margin: 10px 0px 30px 0px;
+}
+
+.image {
+  width: 350px;
+  height: 350px;
+  border-radius: 4px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 660px) {
+
+  .flex-container,
+  .post-contents {
+    flex-direction: column;
+  }
+
+  .form_container {
+    width: 90%;
+  }
+
+  .remove {
+    margin-top: 30px;
+  }
+
+  .post-header {
+    text-align: center;
+  }
+}
+
+
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}

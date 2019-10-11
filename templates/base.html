@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BUSE MARKET</title>
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
+</head>
+
+<body>
+
+  <nav class="nav" role="navigation">
+    <div class="nav-wrapper">
+      <a href="{{url_for('home')}}" class="brand-logo">BUSE MARKET</a>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        {% if session['username'] %}
+          <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect btn indigo waves-light ">My Posts</a></li>
+          <li><a href="{{url_for('add_post')}}" class="waves-effect btn  indigo waves-light ">Add a Post</a></li>
+          <li><a href="{{url_for('categories')}}" class="waves-effect  darken-2 waves-light "></a></li>
+          <li><a href="{{url_for('logout')}}" class="waves-effect orange-text accent-4 waves-light ">Log Out</a></li>
+        {% else %}
+          <li><a href="{{url_for('signup')}}" class="waves-effect orange accent-2 waves-light btn">Sign Up</a></li>
+          <li><a href="{{url_for('login')}}" class="waves-effect blue waves-light btn">Login</a></li>
+        {% endif %}
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        {% if session['username'] %}
+          <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect blue waves-light btn">My POST</a></li>
+          <li><a href="{{url_for('add_post')}}" class="waves-effect orange accent-2 waves-light btn">Add Post</a></li>
+        <li><a href="{{url_for('categories')}}" class="waves-effect darken-2 waves-light "></a></li>
+          <li><a href="{{url_for('logout')}}" class="waves-effect red waves-light btn">Log Out</a></li>
+        {% else %}
+          <li><a href="{{url_for('signup')}}" class="waves-effect orange accent-2 waves-light btn">Sign Up</a></li>
+          <li><a href="{{url_for('login')}}" class="waves-effect blue waves-light btn">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  {% block content %}{% endblock %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" ></script>
+  <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+  <script type="text/javascript">
+  $('.button-collapse').sideNav({
+      menuWidth: 240, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
+
+
+  //Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+  
+  </script>
+ 
+</body>
+
+</html>

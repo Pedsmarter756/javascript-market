@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if session.username %}
+    <div class="category">
+      <div class="form_container">
+        <p class="heading">Add Category</p>
+        <form action="{{ url_for('update_category', category_id=category._id) }}" class="category-form" method="POST">
+          <div class="input-field">
+            <i class="material-icons prefix">category</i>
+            <input id="icon_prefix" type="text" class="validate" id="category_name" name="category_name" value="{{category.category_name}}" required>
+            <label for="icon_prefix">Category</label>
+          </div>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Save Changes</button>
+        </form>
+        <a class="btn waves-effect waves-light red action-button" href="{{ url_for('categories') }}">Cancel</a>
+      </div>
+    </div>
+  {% else %}
+    <div class="login">
+      <div class="form_container">
+        <header>
+          <p class="heading">You will need to sign in to view this information</p>
+        </header>
+        <a href="{{url_for('login')}}" class="waves-effect orange accent-2 waves-light btn">Login</a>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

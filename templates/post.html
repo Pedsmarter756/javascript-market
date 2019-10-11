@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="category">
+    <div class="post-detail-container">
+      <p class="post-header">{{post.name}}</p>
+      <div class="post-contents">
+          <img src="{{post.image}}" class="image"/>
+          <div class="padding">
+            <p class="post-stat"><i class="material-icons icon">style</i>Make: {{post.make}}</p>
+            <p class="post-stat"><i class="material-icons icon">device_hub</i>Year Modal: {{post.year_modal}}</p>
+            <p class="post-stat"><i class="material-icons icon">link</i>quantity: {{post.quantity}}</p>
+            <p class="post-stat"><i class="material-icons icon">note</i>Category: {{post.category}}</p>
+          </div>
+        </div>
+        <div class="padding green">
+          <p class="post-header"><i class="material-icons icon">library_books</i> Description</p>
+          {% for technic in post.technics %}
+            <p class="technic">{{technic}}</p>
+          {% endfor %}
+          <p class="post-header"><i class="material-icons icon">person</i>Contact info</p>
+          <p>{{post.contact}}</p>
+          <p class="post-header"><i class="material-icons icon">local_shipping</i>Local Shipping</p>
+          <p>{{post.condition}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

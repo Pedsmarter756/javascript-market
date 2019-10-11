@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if session.username %}
+      <div class="post">
+        <div class="form_container">
+          <p class="heading">Edit post</p>
+          <form action="{{ url_for('update_post', post_id=post._id) }}" method="POST" class="add-post">
+            <div class="input-field">
+            <div class="input-field">
+                <input disabled value="{{session['username']}}" id="author" name="author" type="text" class="validate">
+                <label for="author_name">Author</label>
+              </div>
+
+              <select name="category_name" id="category_name" class="validate category" required="required">
+                <option value="" disabled selected>Category</option>
+                  {% for cat in categories %}
+                    {% if cat.category_name == post.category %}
+                      <option value="{{post.category}}" selected >{{post.category}}</option>
+                    {% else %}
+                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                    {% endif %}
+                  {% endfor %}
+              </select>
+            </div>
+            <div class="add-post-fields">
+            <div class="input-field">
+              <input id="icon_prefix" placeholder="(eg:car,house,Tv,...)" type="text" maxlength="20" class="validate" id="name" name="name" required>
+              <label for="icon_prefix">post name</label>
+            </div>
+            <div class="input-field">
+              <input id="icon_prefix" placeholder="(eg:Mercedes-Benz,villa,adidas,samsung...)" type="text" maxlength="15" class="validate" id="makes" name="makes" required>
+              <label for="icon_prefix">mark </label>
+            </div>
+            <div class="input-field">
+              <input id="icon_prefix" placeholder="eg:2009" type="text" maxlength="12" class="validate" id="year" name="year" required>
+              <label for="icon_prefix">Year modal</label>
+            </div>
+            <div class="input-field">
+              <input id="icon_prefix" placeholder="eg:1,2,3..., (optional)" type="number" min="1" class="validate" id="quantity" name="quantity" >
+              <label for="icon_prefix">quantity(optional)</label>
+            </div>
+            <div class="input-field">
+              <input 
+                id="image" 
+                name="image" 
+                type="url" 
+                class="validate image" 
+                placeholder="e.g. https://example.com"
+                pattern="https://.*"
+                required   
+              >
+              <label for="image">Image (For best results, choose an image with a 4:3 aspect ratio)</label>
+            </div>
+            <div id="field-section">
+              <div id="form-field">
+                <div class="input-field">
+                  <input type="text" placeholder="(eg:This item is brand new.or This item is in good condition.)" maxlength="30" class="validate" id="technic" name="technic" required />
+                  <label for="technic"> Description </label>
+                </div>
+            </div>
+              <div class="technic-btn">
+                <a class="btn waves-effect green waves-light" id="add-technic-btn">Add Technical info (optional)</a>
+                <a class="btn waves-effect remove orange waves-light" id="remove-technic-btn">Remove Technical info</a>
+              </div>
+            </div>
+            <div class="input-field">
+              <textarea id="icon_prefix" placeholder="(eg:+46704052680 or youremail@example.com)" type="text" maxlength="15"class="materialize-textarea" id="contact" name="contact" required></textarea>
+              <label for="icon_prefix">Your contact </label>
+            </div>
+            <div class="input-field">
+              <input id="icon_prefix" placeholder="(eg:Free delivery or You have to pick up)"  type="text" maxlength="25" class="validate" id="condition" name="condition" >
+              <label for="icon_prefix">Local Shipping (optional)</label>
+            </div> 
+              
+            </div>
+            <button class="btn waves-effect green waves-light" type="submit" name="action">Save Changes</button>
+          </form>
+          <a class="btn waves-effect waves-light orange action-button" href="{{url_for('loggedin', username=session['username'])}}">Cancel</a>
+        </div>
+      </div>
+    {% else %}
+      <div class="login">
+        <div class="form_container">
+          <header>
+            <p class="heading">You will need to sign in to view this information</p>
+          </header>
+          <a href="{{url_for('login')}}" class="waves-effect orange accent-2 waves-light btn">Login</a>
+        </div>
+      </div>
+    {% endif %}
+{% endblock %}
