@@ -3,7 +3,7 @@
 {% block content %}
   <nav class="filter-nav">
     <div class="nav-wrapper ">
-      <a href="#" data-activates="mobile-filter" class="button-collapse"><i class="material-icons">apps</i></a>
+      <a href="#" data-activates="mobile-filter" class="button-collapse"><i class="material-icons text-orange ">wrap_text</i></a>
       <ul class="right hide-on-med-and-down">
         {% for category in categories %}
           <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect cyan accent-3 filter-btn waves-light btn">{{category.category_name}}</a></li>
@@ -23,6 +23,7 @@
         <div class="post-card col s12 m6 l3">
           <h5 class="post-title">{{post.name}}</h5>
           <img src="{{post.image}}" alt="" class="post_image" />
+          <p class="post-stat"><i class="material-icons icon orange-text">monetization_on</i>Price: {{post.price}}</p>
           <a href="{{url_for('post', post_id=post._id)}}" class="waves-effect  waves-light btn">View post</a>
         </div>
       </a>

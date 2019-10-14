@@ -20,6 +20,10 @@ body {
   color: green;
 }
 
+.contact-about {
+  margin-left: 300px;
+}
+
 nav .brand-logo i {
   float: right;
   margin-left: 10px;
@@ -207,15 +211,15 @@ a {
 
 /*Images*/
 .post_image {
-  width: 250px;
-  height: 200px;
+  width: 350px;
+  height: 300px;
   border-radius: 4px;
-  margin: 10px 0px 30px 0px;
+  margin: 5px 0px 5px 0px;
 }
 
 .image {
-  width: 350px;
-  height: 350px;
+  width: 450px;
+  height: 400px;
   border-radius: 4px;
 }
 
@@ -264,4 +268,8 @@ a {
 
 #myBtn:hover {
   background-color: #555;
+}
+
+.about {
+  background-color: cadetblue;
 }

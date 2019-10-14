@@ -4,14 +4,13 @@
     {% if session.username %}
       <div class="post">
         <div class="form_container">
-          <p class="heading">Edit post</p>
+          <p class="heading">Edit a post</p>
           <form action="{{ url_for('update_post', post_id=post._id) }}" method="POST" class="add-post">
-            <div class="input-field">
             <div class="input-field">
                 <input disabled value="{{session['username']}}" id="author" name="author" type="text" class="validate">
                 <label for="author_name">Author</label>
               </div>
-
+            <div class="input-field">
               <select name="category_name" id="category_name" class="validate category" required="required">
                 <option value="" disabled selected>Category</option>
                   {% for cat in categories %}
@@ -35,6 +34,10 @@
             <div class="input-field">
               <input id="icon_prefix" placeholder="eg:2009" type="text" maxlength="12" class="validate" id="year" name="year" required>
               <label for="icon_prefix">Year modal</label>
+            </div>
+            <div class="input-field">
+              <input id="icon_prefix" placeholder="eg:200$" type="text" maxlength="12" class="validate" id="price" name="price" required>
+              <label for="icon_prefix">Price</label>
             </div>
             <div class="input-field">
               <input id="icon_prefix" placeholder="eg:1,2,3..., (optional)" type="number" min="1" class="validate" id="quantity" name="quantity" >

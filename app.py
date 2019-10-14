@@ -4,14 +4,22 @@ from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 from flask_bcrypt import bcrypt
 
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret_key'
+#app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
+app.config['MONGO_DBNAME'] = 'buy-and-sell-market'
 
-app.secret_key = os.urandom(24)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
-app.config['MONGO_DBNAME'] = 'online_selling'
+#client = pymongo.MongoClient("mongodb+srv://masabo:masabojino@buy-and-sell-2bq4s.mongodb.net/masabo?retryWrites=true&w=majority")
+#db = client.masabo
+
+app.config["MONGO_URI"] ='mongodb+srv://masabo:masabojino@buy-and-sell-2bq4s.mongodb.net/buy-and-sell-market?retryWrites=true&w=majority'
+#app.config["MONGO_URI"] = "mongodb://localhost:27017/visipedia_annotation_toolkit"
 
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/visipedia_annotation_toolkit"
+
+
+
 
 mongo = PyMongo(app)
 
@@ -113,6 +121,7 @@ def insert_post():
         'technics': request.form.getlist('technic'),
         'contact': request.form.get('contact'),
         'condition': request.form.get('condition'),
+        'price':request.form.get('price')
         })
     return redirect(url_for('loggedin', username=session['username']))
 
@@ -138,6 +147,7 @@ def update_post(post_id):
         'technics': request.form.getlist('technic'),
         'contact': request.form.get('contact'),
         'condition': request.form.get('condition'),
+        'price':request.form.get('price'),
         'added_by': session['username'],
         })
     return redirect(url_for('loggedin', username=session['username']))
@@ -195,7 +205,12 @@ def update_category(category_id):
         {'_id': ObjectId(category_id)},
         {'category_name': request.form['category_name']})
     return redirect(url_for('categories'))
-
+@app.route("/about")
+def about():
+    return render_template("about.html")
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 

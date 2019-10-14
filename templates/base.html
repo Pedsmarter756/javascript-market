@@ -17,13 +17,16 @@
     <div class="nav-wrapper">
       <a href="{{url_for('home')}}" class="brand-logo">BUSE MARKET</a>
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons lime-text accent-3 ">menu</i></a>
       <ul class="right hide-on-med-and-down">
         {% if session['username'] %}
-          <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect btn indigo waves-light ">My Posts</a></li>
+          <li> <a  href="{{url_for('about')}}" class="contact-about   waves-effect orange accent-4 btn">About Us</a></li>
+          <li> <a  href="{{url_for('contact')}}" class="contact-about   waves-effect orange accent-4  btn">Contact us </a></li>
+      
+          <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect btn indigo waves-light ">My Acount</a></li>
           <li><a href="{{url_for('add_post')}}" class="waves-effect btn  indigo waves-light ">Add a Post</a></li>
           <li><a href="{{url_for('categories')}}" class="waves-effect  darken-2 waves-light "></a></li>
-          <li><a href="{{url_for('logout')}}" class="waves-effect orange-text accent-4 waves-light ">Log Out</a></li>
+          <li><a href="{{url_for('logout')}}" class="waves-effect btn orange-text accent-4 waves-light ">Log Out</a></li>
         {% else %}
           <li><a href="{{url_for('signup')}}" class="waves-effect orange accent-2 waves-light btn">Sign Up</a></li>
           <li><a href="{{url_for('login')}}" class="waves-effect blue waves-light btn">Login</a></li>
@@ -31,8 +34,10 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         {% if session['username'] %}
-          <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect blue waves-light btn">My POST</a></li>
-          <li><a href="{{url_for('add_post')}}" class="waves-effect orange accent-2 waves-light btn">Add Post</a></li>
+        <li> <a  href="{{url_for('about')}}" class="contact-about   waves-effect orange accent-4 btn">About Us</a></li>
+          <li> <a  href="{{url_for('contact')}}" class="contact-about   waves-effect orange accent-4  btn">Contact us </a></li>
+          <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect blue waves-light btn">My Acount</a></li>
+          <li><a href="{{url_for('add_post')}}" class="waves-effect orange accent-2 waves-light btn">Add a Post</a></li>
         <li><a href="{{url_for('categories')}}" class="waves-effect darken-2 waves-light "></a></li>
           <li><a href="{{url_for('logout')}}" class="waves-effect red waves-light btn">Log Out</a></li>
         {% else %}
