@@ -109,13 +109,13 @@ def insert_post():
         'name': request.form.get('name'),
         'make': request.form.get('makes'),
         'year_modal': request.form.get('year'),
-        'quantity': request.form.get('quantity'),
         'image': request.form.get('image'),
-        'added_by': session['username'],
+        'quantity': request.form.get('quantity'),
         'technics': request.form.getlist('technic'),
         'contact': request.form.get('contact'),
         'condition': request.form.get('condition'),
-        'price':request.form.get('price')
+        'price':request.form.get('price'),
+        'added_by': session['username'],
         })
     return redirect(url_for('loggedin', username=session['username']))
 
