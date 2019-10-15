@@ -9,6 +9,9 @@ app = Flask(__name__)
 
 
 
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['MONGO_DBNAME'] = os.environ.get('MONGO_DBNAME')
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 
 
@@ -117,15 +120,6 @@ def insert_post():
     return redirect(url_for('loggedin', username=session['username']))
 
 
-@app.route('/edit_post/<post_id>')
-def edit_post(post_id):
-    post = posts_collection.find_one({'_id': ObjectId(post_id)})
-    _categories = categories_collection.find()
-    category_list = [category for category in _categories]
-    return render_template('editpost.html', post=post,
-                        categories=category_list)
-
-
 @app.route('/update_post/<post_id>', methods=['POST'])
 def update_post(post_id):
     posts_collection.update({'_id': ObjectId(post_id)}, {
@@ -181,6 +175,14 @@ def delete_category(category_id):
     categories_collection.remove({'_id': ObjectId(category_id)})
     return redirect(url_for('categories'))
 
+@app.route('/edit_post/<post_id>')
+def edit_post(post_id):
+    post = posts_collection.find_one({'_id': ObjectId(post_id)})
+    _categories = categories_collection.find()
+    category_list = [category for category in _categories]
+    return render_template('editpost.html', post=post,
+                        categories=category_list)
+
 
 @app.route('/edit_category/<category_id>')
 def edit_category(category_id):
@@ -196,9 +198,11 @@ def update_category(category_id):
         {'_id': ObjectId(category_id)},
         {'category_name': request.form['category_name']})
     return redirect(url_for('categories'))
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html")

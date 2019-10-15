@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if session.username %}
+  {% if session.username %}
       <div class="post">
         <div class="form_container">
-          <p class="heading">Edit a post</p>
+          <p class="heading">Edit my post</p>
           <form action="{{ url_for('update_post', post_id=post._id) }}" method="POST" class="add-post">
-            <div class="input-field">
-                <input disabled value="{{session['username']}}" id="author" name="author" type="text" class="validate">
-                <label for="author_name">Author</label>
-              </div>
+          <div class="input-field">
+              <input disabled value="{{session['username']}}" id="author" name="author" type="text" class="validate">
+              <label for="author_name">Author</label>
+            </div>
             <div class="input-field">
               <select name="category_name" id="category_name" class="validate category" required="required">
-                <option value="" disabled selected>Category</option>
+                <option value="" disabled selected>Categories</option>
                   {% for cat in categories %}
                     {% if cat.category_name == post.category %}
                       <option value="{{post.category}}" selected >{{post.category}}</option>
@@ -20,9 +20,10 @@
                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                     {% endif %}
                   {% endfor %}
-              </select>
-            </div>
-            <div class="add-post-fields">
+            
+            </select>
+          </div>
+          <div class="add-post-fields">
             <div class="input-field">
               <input id="icon_prefix" placeholder="(eg:car,house,Tv,...)" type="text" maxlength="20" class="validate" id="name" name="name" required>
               <label for="icon_prefix">post name</label>
@@ -40,8 +41,8 @@
               <label for="icon_prefix">Price</label>
             </div>
             <div class="input-field">
-              <input id="icon_prefix" placeholder="eg:1,2,3..., (optional)" type="number" min="1" class="validate" id="quantity" name="quantity" >
-              <label for="icon_prefix">quantity(optional)</label>
+              <input id="icon_prefix" placeholder="(eg:123...,optional)" type="number" min="1" class="validate" id="quantity" name="quantity" >
+              <label for="icon_prefix">quantity</label>
             </div>
             <div class="input-field">
               <input 
@@ -72,24 +73,24 @@
               <label for="icon_prefix">Your contact </label>
             </div>
             <div class="input-field">
-              <input id="icon_prefix" placeholder="(eg:Free delivery or You have to pick up)"  type="text" maxlength="25" class="validate" id="condition" name="condition" >
-              <label for="icon_prefix">Local Shipping (optional)</label>
+              <input id="icon_prefix" placeholder="(eg:Free delivery or You have to pick up)" type="text" maxlength="25" class="validate" id="condition" name="condition" >
+              <label for="icon_prefix">Local Shipping (Optional) </label>
             </div> 
-              
-            </div>
-            <button class="btn waves-effect green waves-light" type="submit" name="action">Save Changes</button>
-          </form>
-          <a class="btn waves-effect waves-light orange action-button" href="{{url_for('loggedin', username=session['username'])}}">Cancel</a>
-        </div>
+            
+          </div>
+          <button class="btn waves-effect green waves-light" id="submitbutton" type="submit" name="action">Add</button>
+        </form>
+        <a class="btn waves-effect waves-light orange action-button" href="{{url_for('loggedin', username=session['username'])}}">Cancel</a>
       </div>
-    {% else %}
-      <div class="login">
-        <div class="form_container">
-          <header>
-            <p class="heading">You will need to sign in to view this information</p>
-          </header>
-          <a href="{{url_for('login')}}" class="waves-effect orange accent-2 waves-light btn">Login</a>
-        </div>
+    </div>
+  {% else %}
+    <div class="login">
+      <div class="form_container">
+        <header>
+          <p class="heading">You will need to sign in to view this information</p>
+        </header>
+        <a href="{{url_for('login')}}" class="waves-effect orange accent-2 waves-light btn">Login</a>
       </div>
-    {% endif %}
+    </div>
+  {% endif %}
 {% endblock %}

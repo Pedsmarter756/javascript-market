@@ -5,17 +5,17 @@
     <div class="post">
       <div class="form_container">
         <header>
-          <p class="heading">Add post</p>
+          <p class="heading">Add a post</p>
         </header>
         <form action="{{ url_for('insert_post') }}" method="POST" class="add-post" name="add-post">
-          <div class="input-field">
+          
           <div class="input-field">
               <input disabled value="{{session['username']}}" id="author" name="author" type="text" class="validate">
               <label for="author_name">Author</label>
             </div>
-
+          <div class="input-field">
             <select name="category_name" id="category_name" required="required" class="validate category">
-              <option value="" disabled selected>Category</option>
+              <option value="" disabled selected>Categories</option>
               {% for category in categories %}
                 <option>{{category.category_name}}</option>
               {% endfor %}
