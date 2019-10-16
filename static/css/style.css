@@ -21,7 +21,8 @@ body {
 }
 
 .contact-about {
-  margin-left: 300px;
+  margin-left: 200px;
+  margin-right: 100px;
 }
 
 nav .brand-logo i {
@@ -259,7 +260,7 @@ a {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: red;
+  background-color: rgb(94, 255, 0);
   color: white;
   cursor: pointer;
   padding: 15px;
@@ -267,9 +268,14 @@ a {
 }
 
 #myBtn:hover {
-  background-color: #555;
+  background-color: rgb(241, 19, 130);
 }
 
 .about {
   background-color: cadetblue;
+}
+
+.bouton {
+  font-weight: 600;
+  display: flex;
 }
