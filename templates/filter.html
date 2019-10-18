@@ -3,13 +3,13 @@
 {% block content %}
   <nav class="filter-nav">
     <div class="nav-wrapper">
-      <a href="#" data-activates="mobile-filter" class="button-collapse"><i class="material-icons deep-orange-text">apps</i></a>
+      <a href="#" data-target="mobile-filter" class="sidenav-trigger"><i class="material-icons deep-orange-text">apps</i></a>
       <ul class="right hide-on-med-and-down">
         {% for category in categories %}
           <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect  filter-btn waves-light btn">{{category.category_name}}</a></li>
         {% endfor %}
       </ul>
-      <ul class="side-nav" id="mobile-filter">
+      <ul class="sidenav" id="mobile-filter">
         {% for category in categories %}
           <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect  filter-btn waves-light btn">{{category.category_name}}</a></li>
         {% endfor %}
@@ -21,7 +21,7 @@
     {% for post in posts %}
       {% if post.category == category_name.category_name %}
         <a href="{{ url_for('post', post_id=post._id) }}">
-          <div class="post-card col s12 m6 l4">
+          <div class="post-card col s12 m6 l3">
             <h5 class="post-title">{{post.name}}</h5>
             <img src="{{post.image}}" alt="" class="post_image" />
             <a href="{{url_for('post', post_id=post._id)}}" class="waves-effect  waves-light btn">View post</a>

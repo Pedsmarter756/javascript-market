@@ -1,12 +1,13 @@
 $(document).ready(function () {
+    $('.sidenav').sidenav();
     // Show validation message on material select dropdown
-    $('select').material_select();
+    $('select').formSelect();
     $("select[required]").css({
         position: "absolute",
         display: "inline",
         height: 0,
         padding: 0,
-        width: 0
+        width: 0,
     });
 
     // Button

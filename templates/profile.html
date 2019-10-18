@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p class="heading">My posts</p>
+  <p class="heading">My items</p>
   <div class="flex-container">
     {% for post in posts %}
       <a href="{{ url_for('post', post_id=post._id) }}">
@@ -9,8 +9,8 @@
           <h5 class="post-title">{{post.name}}</h5>
           <img src="{{post.image}}" alt="" class="post_image" />
           <div class="post-button-container">
-          <a href="{{url_for('edit_post', post_id=post._id)}}" class="waves-effect green edit waves-light btn">Edit</a>
-          <a href="{{url_for('delete_post', post_id=post._id)}}" class="waves-effect orange delete waves-light btn">Delete</a>
+            <a href="{{url_for('edit_post', post_id=post._id)}}" class="waves-effect green edit waves-light btn">Edit</a>
+            <a href="{{url_for('delete_post', post_id=post._id)}}" class="waves-effect deep-orange delete waves-light btn">Delete</a>
           </div>
         </div>
       </a>

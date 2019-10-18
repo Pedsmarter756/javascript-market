@@ -4,8 +4,8 @@
   {% if session.username %}
       <div class="post">
         <div class="form_container">
-          <p class="heading">Edit my post</p>
-          <form action="{{ url_for('update_post', post_id=post._id) }}" method="POST" class="add-post">
+          <p class="heading">Edit Item</p>
+          <form action="{{ url_for('update_post', post_id=post._id) }}" method="POST" role="form" name="edit" class="add-post">
           <div class="input-field">
               <input disabled value="{{session['username']}}" id="author" name="author" type="text" class="validate">
               <label for="author_name">Author</label>
@@ -25,28 +25,29 @@
           </div>
           <div class="add-post-fields">
             <div class="input-field">
-              <input id="icon_prefix" placeholder="(eg:car,house,Tv,...)" type="text" maxlength="20" class="validate" id="name" name="name" required>
+              <input id="icon_prefix" placeholder="(eg:car,house,Tv,...)" type="text" maxlength="20" class="validate" id="name" name="name" value="{{post.name}}" required>
               <label for="icon_prefix">post name</label>
             </div>
             <div class="input-field">
-              <input id="icon_prefix" placeholder="(eg:Mercedes-Benz,villa,adidas,samsung...)" type="text" maxlength="15" class="validate" id="makes" name="makes" required>
-              <label for="icon_prefix">mark </label>
+              <input id="icon_prefix" placeholder="(eg:Mercedes-Benz,villa,adidas,samsung...)" type="text" maxlength="15" class="validate" id="makes" name="makes" value="{{post.make}}" required>
+              <label for="icon_prefix">make </label>
             </div>
             <div class="input-field">
-              <input id="icon_prefix" placeholder="eg:2009" type="text" maxlength="12" class="validate" id="year" name="year" required>
+              <input id="icon_prefix" placeholder="eg:2009" type="text" maxlength="12" class="validate" id="year" name="year" value="{{post.year_modal}}"  required>
               <label for="icon_prefix">Year modal</label>
             </div>
             <div class="input-field">
-              <input id="icon_prefix" placeholder="eg:200$" type="text" maxlength="12" class="validate" id="price" name="price" required>
+              <input id="icon_prefix" placeholder="eg:200$" type="text" maxlength="12" class="validate" id="price" name="price" value="{{post.price}}"  required>
               <label for="icon_prefix">Price</label>
             </div>
             <div class="input-field">
-              <input id="icon_prefix" placeholder="(eg:123...,optional)" type="number" min="1" class="validate" id="quantity" name="quantity" >
+              <input id="icon_prefix" placeholder="(eg:123...,optional)" type="number" min="1" class="validate" id="quantity" name="quantity" value="{{post.quantity}}"  >
               <label for="icon_prefix">quantity</label>
             </div>
             <div class="input-field">
               <input 
                 id="image" 
+                value="{{post.image}}"
                 name="image" 
                 type="url" 
                 class="validate image" 
@@ -59,7 +60,7 @@
             <div id="field-section">
               <div id="form-field">
                 <div class="input-field">
-                  <input type="text" placeholder="(eg:This item is brand new.or This item is in good condition.)" maxlength="30" class="validate" id="technic" name="technic" required />
+                  <input type="text" placeholder="(eg:This item is brand new.or This item is in good condition.)" maxlength="30" class="validate" id="technic" name="technic" value="{{technic}}" required />
                   <label for="technic"> Description </label>
                 </div>
             </div>
@@ -69,11 +70,11 @@
               </div>
             </div>
             <div class="input-field">
-              <textarea id="icon_prefix" placeholder="(eg:+46704052680 or youremail@example.com)" type="text" maxlength="15"class="materialize-textarea" id="contact" name="contact" required></textarea>
+              <textarea id="icon_prefix" placeholder="(eg:+46704052680 or youremail@example.com)" type="text" maxlength="15"class="materialize-textarea" id="contact" name="contact" required>{{post.contact}}</textarea>
               <label for="icon_prefix">Your contact </label>
             </div>
             <div class="input-field">
-              <input id="icon_prefix" placeholder="(eg:Free delivery or You have to pick up)" type="text" maxlength="25" class="validate" id="condition" name="condition" >
+              <input id="icon_prefix" placeholder="(eg:Free delivery or You have to pick up)" type="text" maxlength="25" class="validate" id="condition" name="condition" value="{{post.condition}}">
               <label for="icon_prefix">Local Shipping (Optional) </label>
             </div> 
             

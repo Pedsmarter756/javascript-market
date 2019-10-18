@@ -7,38 +7,39 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
 </head>
 
 <body>
 
-  <nav class="nav" role="navigation">
+    <nav class="nav" role="navigation">
     <div class="nav-wrapper">
       <a href="{{url_for('home')}}" class="brand-logo">FREE MARKET</a>
+
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons lime-text accent-3 ">menu</i></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger left"><i class="material-icons lime-text accent-3 ">menu</i></a>
       <ul class="right hide-on-med-and-down">
         {% if session['username'] %}
           <li> <a  href="{{url_for('about')}}" class="contact-about bouton  waves-effect  accent-4 ">ABOUT US</a></li>
           <li> <a  href="{{url_for('contact')}}" class="contact-about bouton  waves-effect  accent-4  ">CONTACT US </a></li>
       
-          <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect bouton  waves-light ">MY POSTS</a></li>
-          <li><a href="{{url_for('add_post')}}" class="waves-effect bouton  waves-light ">ADD A POST</a></li>
-          <li><a href="{{url_for('categories')}}" class="waves-effect  darken-2 waves-light "></a></li>
+          <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect bouton  waves-light ">MY ITEMS</a></li>
+          <li><a href="{{url_for('add_post')}}" class="waves-effect bouton  waves-light ">SELL NEW ITEM</a></li>
+          <li><a href="{{url_for('categories')}}" class="waves-effect  darken-2 waves-light  "></a></li>
           <li><a href="{{url_for('logout')}}" class="waves-effect bouton orange-text accent-4 waves-light ">Log Out</a></li>
         {% else %}
           <li><a href="{{url_for('signup')}}" class="waves-effect orange accent-2 waves-light btn">Sign Up</a></li>
           <li><a href="{{url_for('login')}}" class="waves-effect blue waves-light btn">Login</a></li>
         {% endif %}
       </ul>
-      <ul class="side-nav" id="mobile-demo">
+      <ul class="sidenav " id="mobile-demo">
         {% if session['username'] %}
         <li> <a  href="{{url_for('about')}}" class="contact-about   waves-effect orange accent-4 btn">About Us</a></li>
           <li> <a  href="{{url_for('contact')}}" class="contact-about   waves-effect orange accent-4  btn">Contact us </a></li>
           <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect blue waves-light btn">My Acount</a></li>
-          <li><a href="{{url_for('add_post')}}" class="waves-effect orange accent-2 waves-light btn">Add a Post</a></li>
-        <li><a href="{{url_for('categories')}}" class="waves-effect darken-2 waves-light "></a></li>
+          <li><a href="{{url_for('add_post')}}" class="waves-effect orange accent-2 waves-light btn">SELL NEW ITEM</a></li>
+        <li><a href="{{url_for('categories')}}" class="waves-effect darken-2 waves-light  "></a></li>
           <li><a href="{{url_for('logout')}}" class="waves-effect red waves-light btn">Log Out</a></li>
         {% else %}
           <li><a href="{{url_for('signup')}}" class="waves-effect orange accent-2 waves-light btn">Sign Up</a></li>
@@ -48,14 +49,15 @@
     </div>
   </nav>
   {% block content %}{% endblock %}
+  <script src="https://rawgit.com/web-animations/web-animations-js/master/web-animations.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" ></script>
   <script src="{{ url_for('static', filename='js/form.js') }}"></script>
   <script type="text/javascript">
-  $('.button-collapse').sideNav({
+  $('.sidenav').sidenav({
       menuWidth: 240, // Default is 240
       edge: 'left', // Choose the horizontal origin
-      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+     /* closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor*/
     }
   );
 
@@ -79,6 +81,16 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+var elem = document.querySelector('.pulse');
+var animation = element.animate({
+  opacity: [0.5, 1],transform: ['scale(0.5)', 'scale(1)'],},
+{
+  direction: 'alternate',
+  duration: 1500,
+  iterations: Infinity,
+});
+
   
   </script>
 

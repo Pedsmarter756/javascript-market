@@ -20,11 +20,6 @@ body {
   color: green;
 }
 
-.contact-about {
-  margin-left: 200px;
-  margin-right: 100px;
-}
-
 nav .brand-logo i {
   float: right;
   margin-left: 10px;
@@ -35,7 +30,7 @@ nav .button-collapse {
 }
 
 .filter-nav {
-  background-color: grey;
+  background-color: #8b888b;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -61,7 +56,7 @@ nav .button-collapse {
 }
 
 .form_container {
-  background-color: whitesmoke;
+  background-color: #ffffff;
   margin: 40px;
   padding: 20px;
   border-radius: 4px;
@@ -71,7 +66,6 @@ nav .button-collapse {
   display: flex;
   flex-direction: column;
   width: 70%;
-
 }
 
 .post_container {
@@ -166,7 +160,7 @@ a {
   display: flex;
 }
 
-.ingredient {
+.technic {
   text-transform: capitalize;
 }
 
@@ -249,8 +243,6 @@ a {
 }
 
 
-
-
 #myBtn {
   display: none;
   position: fixed;
@@ -263,7 +255,7 @@ a {
   background-color: rgb(94, 255, 0);
   color: rgb(247, 163, 9);
   cursor: pointer;
-  padding: 15px;
+  padding: 20px;
   border-radius: 4px;
 }
 
