@@ -219,7 +219,6 @@ def format_datetime(value, format="%d %b %Y %I:%M "):
     return value.strftime(format)
 
 
-
 if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
