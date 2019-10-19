@@ -4,20 +4,36 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-family: 'Oswald', sans-serif;
   color: #ffffff;
-  background-color: grey;
+  background-color: rgba(240, 235, 231, 0.938);
 }
 
 .nav {
-  background-color: #0c457d;
+  background-color: #610344;
+}
+
+.vertic {
+  border-right: 1px solid #576979;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.vertic:hover {
+  background-color: aquamarine;
+  color: #580b40;
 }
 
 .brand-logo {
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Arizonia', cursive;
+  text-shadow: 4px 4px 4px #aaa;
   margin-left: 20px;
   display: flex;
-  color: green;
+
 }
 
 nav .brand-logo i {
@@ -30,11 +46,15 @@ nav .button-collapse {
 }
 
 .filter-nav {
-  background-color: #8b888b;
+  background-color: #580b40;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.filter-btn {
+  background-color: darkslategray;
 }
 
 /*Containers*/
@@ -182,6 +202,8 @@ a {
   width: 100%;
 }
 
+
+
 .add-post-fields {
   padding-left: 10px;
   padding-right: 10px;
@@ -207,15 +229,31 @@ a {
 /*Images*/
 .post_image {
   width: 350px;
-  height: 270px;
+  height: 250px;
   border-radius: 4px;
-  margin: 5px 0px 5px 0px;
+  margin: 3px 0px 3px 0px;
 }
 
 .image {
   width: 450px;
   height: 370px;
   border-radius: 4px;
+}
+
+.view-post {
+  background-color: darkslategray;
+  margin-top: 3px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.view-price {
+
+  align-items: center;
+  justify-content: center;
 }
 
 .icon {
@@ -270,4 +308,20 @@ a {
 .bouton {
   font-weight: 600;
   display: flex;
+}
+
+.social {
+  display: inline;
+  margin-right: 25px;
+  margin-right: 15px;
+}
+
+.footer {
+  margin-bottom: 0px;
+  margin-top: 20px;
+  color: deeppink;
+}
+
+.social:hover {
+  color: coral;
 }

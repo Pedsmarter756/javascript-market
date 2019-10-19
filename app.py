@@ -3,6 +3,9 @@ from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 from flask_bcrypt import bcrypt
+from datetime import datetime
+
+
 
 
 app = Flask(__name__)
@@ -13,7 +16,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['MONGO_DBNAME'] = os.environ.get('MONGO_DBNAME')
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
-
+date=datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
 
 mongo = PyMongo(app)
 
@@ -116,6 +119,7 @@ def insert_post():
         'condition': request.form.get('condition'),
         'price':request.form.get('price'),
         'added_by': session['username'],
+        'date': datetime.utcnow().strftime("%Y-%m-%d  %H:%M:%S"),
         })
     return redirect(url_for('loggedin', username=session['username']))
 
@@ -134,6 +138,7 @@ def update_post(post_id):
         'condition': request.form.get('condition'),
         'price':request.form.get('price'),
         'added_by': session['username'],
+        'date': datetime.utcnow().strftime(" %Y-%m-%d  %H:%M:%S"),
         })
     return redirect(url_for('loggedin', username=session['username']))
 
@@ -206,6 +211,12 @@ def about():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+@app.template_filter('formatdatetime')
+def format_datetime(value, format="%d %b %Y %I:%M "):
+    if value is None:
+        return ""
+    return value.strftime(format)
 
 
 

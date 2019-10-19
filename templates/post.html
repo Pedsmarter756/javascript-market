@@ -11,18 +11,21 @@
             <p class="post-stat"><i class="material-icons icon yellow-text">device_hub</i>Year Modal: {{post.year_modal}}</p>
             <p class="post-stat"><i class="material-icons icon green-text">link</i>Quantity: {{post.quantity}}</p>
             <p class="post-stat"><i class="material-icons  orange-text">monetization_on</i> Price: {{post.price}}</p>
+            
             <p class="post-stat"><i class="material-icons icon blue-text">note</i>Category: {{post.category}}</p>
           </div>
         </div>
         <div class="padding yellow lighten-3">
-          <p class="post-header"><i class="material-icons icon deep-orange-text accent-3">library_books</i> Description</p>
+          <p class="post-header"><i class="material-icons icon deep-orange-text accent-3 small">library_books</i> Description</p>
           {% for technic in post.technics %}
             <p class="technic">{{technic}}</p>
           {% endfor %}
-          <p class="post-header"><i class="material-icons icon green-text accent-3">person</i>Contact info</p>
+          <p class="post-header"><i class="material-icons icon green-text accent-3 small">perm_phone_msg</i>Contact info</p>
           <p>{{post.contact}}</p>
-          <p class="post-header"><i class="material-icons icon cyan-text accent-3">local_shipping</i>Local Shipping</p>
+          <p class="post-header"><i class="material-icons icon cyan-text accent-3 small">local_shipping</i>Local Shipping</p>
           <p>{{post.condition}}</p>
+          <p class="post-header"><i class="material-icons icon cyan-text accent-3 small">access_time</i>Posted on</p>
+          <p>{{post.date}}</p>
         </div>
       </div>
     </div>

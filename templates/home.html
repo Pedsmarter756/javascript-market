@@ -4,14 +4,14 @@
   <nav class="filter-nav">
     <div class="nav-wrapper ">
       <a href="#" data-target="mobile-filter" class="sidenav-trigger "><i class="material-icons text-orange ">wrap_text</i></a>
-      <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down" >
         {% for category in categories %}
-          <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect cyan accent-3 filter-btn waves-light btn">{{category.category_name}}</a></li>
+          <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect filter-btn waves-light z-depth-4 maroon btn">{{category.category_name}}</a></li>
         {% endfor %}
       </ul>
       <ul class="sidenav " id="mobile-filter">
         {% for category in categories %}
-          <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect blue filter-btn waves-light btn">{{category.category_name}}</a></li>
+          <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect maroon filter-btn waves-light btn">{{category.category_name}}</a></li>
         {% endfor %}
       </ul>
     </div>
@@ -22,8 +22,8 @@
         <div class="post-card col s12 m6 l3">
           <h5 class="post-title">{{post.name}}</h5>
           <img src="{{post.image}}" alt="" class="post_image" />
-          <p class="post-stat "><i class="material-icons  orange-text">monetization_on</i>Price: {{post.price}}</p>
-          <a href="{{url_for('post', post_id=post._id)}}" class="waves-effect  waves-light btn">View post</a>
+          <p class=" "><i class="material-icons view-price center orange-text">monetization_on</i>Price: {{post.price}}</p>
+          <a href="{{url_for('post', post_id=post._id)}}" class="waves-effect view-post center  waves-light btn">More Info<i class="material-icons  orange-text">trending_flat</i></a>
         </div>
       </a>
     {% endfor %}
