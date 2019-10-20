@@ -1,15 +1,30 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session
+from flask import Flask, render_template, redirect, request, url_for, session,flash
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 from flask_bcrypt import bcrypt
 from datetime import datetime
+from flask_mail import Mail,  Message
+from forms import ContactForm
+from flask_wtf import Form
+
+
+
 
 
 
 
 app = Flask(__name__)
-
+app.config.update(
+	DEBUG=False,
+	#EMAIL SETTINGS
+	MAIL_SERVER='smtp.gmail.com',
+	MAIL_PORT=465,
+	MAIL_USE_SSL=True,
+	MAIL_USERNAME = os.environ.get('MAIL_USERNAME'),
+	MAIL_PASSWORD =os.environ.get('MAIL_PASSWORD') 
+	)
+mail = Mail(app)
 
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
@@ -38,18 +53,6 @@ def home():
                         posts=posts,
                         categories=categories)
 
-
-@app.route('/<category_name>', methods=['GET'])
-def filter_list(category_name):
-    categories = list(categories_collection.find())
-    category_name = categories_collection.find_one(
-        {'category_name': category_name})
-    posts = posts_collection.find()
-    return render_template(
-        'filter.html',
-        categories=categories,
-        category_name=category_name,
-        posts=posts)
 
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -154,6 +157,17 @@ def post(post_id):
     post = posts_collection.find_one({'_id': ObjectId(post_id)})
     return render_template('post.html', post=post)
 
+@app.route('/<category_name>', methods=['GET'])
+def filter_list(category_name):
+    categories = list(categories_collection.find())
+    category_name = categories_collection.find_one(
+        {'category_name': category_name})
+    posts = posts_collection.find()
+    return render_template(
+        'filter.html',
+        categories=categories,
+        category_name=category_name,
+        posts=posts)
 
 @app.route('/categories')
 def categories():
@@ -208,9 +222,26 @@ def update_category(category_id):
 def about():
     return render_template("about.html")
 
-@app.route("/contact")
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template("contact.html")
+  form = ContactForm()
+ 
+  if request.method == 'POST':
+    if form.validate() == False:
+      flash('All fields are required.')
+      return render_template('contact.html', form=form)
+    else:
+      msg = Message(form.subject.data, sender='contact@example.com', recipients=['masasimpafra@gmail.com'])
+      msg.body = """
+      From: %s &lt;%s&gt;
+      %s
+      """ % (form.name.data, form.email.data, form.message.data)
+      mail.send(msg)
+ 
+      return render_template('contact.html', success=True)
+ 
+  elif request.method == 'GET':
+    return render_template('contact.html', form=form)
 
 @app.template_filter('formatdatetime')
 def format_datetime(value, format="%d %b %Y %I:%M "):
@@ -224,3 +255,9 @@ if __name__ == '__main__':
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
         debug=False)
+
+    
+
+
+
+
