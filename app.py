@@ -16,7 +16,7 @@ from flask_wtf import Form
 
 app = Flask(__name__)
 app.config.update(
-	DEBUG=False,
+	DEBUG=True,
 	#EMAIL SETTINGS
 	MAIL_SERVER='smtp.gmail.com',
 	MAIL_PORT=465,
