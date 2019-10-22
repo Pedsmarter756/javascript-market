@@ -14,17 +14,22 @@ body {
   background-color: #610344;
 }
 
-.vertic {
-  border-right: 1px solid #576979;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+/* Message flashing */
+.flash {
+  background-color: #FBB0B0;
+  padding: 10px;
+  width: 400px;
 }
 
-.vertic:hover {
-  background-color: aquamarine;
-  color: #580b40;
+.flashing {
+  color: green;
 }
+
+.underline {
+  text-decoration: underline;
+
+}
+
 
 .brand-logo {
   font-weight: 700;
@@ -66,6 +71,19 @@ nav .button-collapse {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.vertic {
+  border-right: 1px solid #576979;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.vertic:hover {
+  background-color: aquamarine;
+  color: #580b40;
+}
+
 
 .flex-container {
   display: flex;
@@ -183,6 +201,42 @@ a {
   text-transform: capitalize;
 }
 
+/*image  &image post*/
+.edit,
+.delete {
+  margin: 20px;
+}
+
+/*Images*/
+.post_image {
+  width: 350px;
+  height: 250px;
+  border-radius: 4px;
+  margin: 3px 0px 3px 0px;
+}
+
+.image {
+  width: 450px;
+  height: 370px;
+  border-radius: 4px;
+}
+
+.view-post {
+  background-color: darkslategray;
+  margin-top: 3px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.view-price {
+
+  align-items: center;
+  justify-content: center;
+}
+
 /*Form*/
 .login-form,
 .category-form {
@@ -220,40 +274,7 @@ a {
   margin: 5px;
 }
 
-.edit,
-.delete {
-  margin: 20px;
-}
 
-/*Images*/
-.post_image {
-  width: 350px;
-  height: 250px;
-  border-radius: 4px;
-  margin: 3px 0px 3px 0px;
-}
-
-.image {
-  width: 450px;
-  height: 370px;
-  border-radius: 4px;
-}
-
-.view-post {
-  background-color: darkslategray;
-  margin-top: 3px;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.view-price {
-
-  align-items: center;
-  justify-content: center;
-}
 
 .icon {
   margin-right: 10px;
@@ -445,20 +466,4 @@ form input#submit:hover {
   background-image: -o-linear-gradient(top, #dbdbdb, #cccccc);
   background-image: linear-gradient(top, #dbdbdb, #cccccc);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#dbdbdb, endColorstr=#cccccc);
-}
-
-/* Message flashing */
-.flash {
-  background-color: #FBB0B0;
-  padding: 10px;
-  width: 400px;
-}
-
-.flashing {
-  color: green;
-}
-
-.underline {
-  text-decoration: underline;
-
 }
