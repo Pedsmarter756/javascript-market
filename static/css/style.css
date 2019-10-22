@@ -457,3 +457,8 @@ form input#submit:hover {
 .flashing {
   color: green;
 }
+
+.underline {
+  text-decoration: underline;
+
+}
