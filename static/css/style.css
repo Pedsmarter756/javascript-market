@@ -354,13 +354,6 @@ a {
   color: coral;
 }
 
-.rotate-45 {
-  transform: rotate(45deg);
-}
-
-.-rotate-45 {
-  transform: rotate(-45deg);
-}
 
 .w-full {
   display: flexbox;
