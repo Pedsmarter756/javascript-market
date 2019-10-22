@@ -48,7 +48,6 @@
           <li> <a  href="{{url_for('contact')}}" class="contact-about   waves-effect cyan accent-4  btn ">Contact us </a></li>
           <li><a href="{{url_for('loggedin', username=session['username'])}}" class="waves-effect cyan accent-4 waves-light btn ">My Items</a></li>
           <li><a href="{{url_for('add_post')}}" class="waves-effect cyan accent-4 waves-light btn ">Sell New Item</a></li>
-        <li><a href="{{url_for('categories')}}" class="waves-effect darken-2 waves-light disabled "></a></li>
           <li><a href="{{url_for('logout')}}" class="waves-effect orange accent-4  waves-light btn ">Log Out</a></li>
         {% else %}
           <li> <a  href="{{url_for('home')}}" class="contact-about btn cyan accent-4  waves-effect   ">HOME</a></li>

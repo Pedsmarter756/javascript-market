@@ -87,7 +87,7 @@ def signup():
 def loggedin(username):
     posts = \
         posts_collection.find({'added_by': session['username']})\
-        .sort('name', pymongo.ASCENDING)
+        .sort('_id', pymongo.DESCENDING)
     return render_template(
         'profile.html',
         username=session['username'],
@@ -172,7 +172,7 @@ def filter_list(category_name):
 @app.route('/categories')
 def categories():
     categories = \
-        categories_collection.find().sort('category_name', pymongo.ASCENDING)
+        categories_collection.find().sort('_id', pymongo.ASCENDING)
     return render_template('categories.html',
                         categories=categories)
 
@@ -248,6 +248,7 @@ def format_datetime(value, format="%d %b %Y %I:%M "):
     if value is None:
         return ""
     return value.strftime(format)
+
 
 
 if __name__ == '__main__':
