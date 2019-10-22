@@ -11,7 +11,7 @@
       </ul>
       <ul class="sidenav " id="mobile-filter">
         {% for category in categories %}
-          <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect maroon filter-btn waves-light btn underline">{{category.category_name}}</a></li>
+          <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect maroon filter-btn waves-light btn underline-title">{{category.category_name}}</a></li>
         {% endfor %}
       </ul>
     </div>
