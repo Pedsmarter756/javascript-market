@@ -1,8 +1,11 @@
-#[buy-and-sell-market](http://buy-and-sell-market.herokuapp.com/)
+# [buy-and-sell-market](http://buy-and-sell-market.herokuapp.com/)
+
+°Deployed app can be found here: (http://buy-and-sell-market.herokuapp.com/)
+°Code can be found on github : (https://github.com/frankkode/buy_and_sell_market)
 
 INTRODUCTION:
 In this project I have created a FREE MARKET website to demonstrate my understanding of the flask-python microframework and mongodb databases. From a user perspective the website should allow them to view, add and edit posts and  also to view other peoples posts on the main page 
-##UX
+## UX
 This project is the assessment of the flask-python modules for the Full Stack Software Development  at Code Institute. I chose to create a web application that allows users to benefite from it. Each user should be able to Create, Read, Update, and Delete (CRUD) their own posts. Users can also be able to contact each other for free and features for a fee.
 
 User Stories
@@ -55,7 +58,7 @@ The W3C Markup Validation Service gives error messages for Flask Jinja code in t
 
 ### Automated Tests
 
-I conducted automated testing of the app routes with unittests, and the tests are in test.py at the root directory. Run the tests by entering ```python3 test_app.py``` in the terminal.
+I conducted automated testing of the app routes with unittests, and the tests are in test_app.py at the root directory. Run the tests by entering ```python3 test_app.py``` in the terminal.
 ![Wireframe / Site Diagram](static/images/test.png "test") 
 
   
@@ -124,12 +127,18 @@ I conducted manual tests of the application as follows:
     6. Ensure that the post is deleted from the database.
     7. Repeat for all posts.
 
-##WIREFLAME BY BALSAMIQ
+## WIREFLAME BY BALSAMIQ
+### Main Page
 ![Wireframe / Site Diagram](static/images/colling-page.png "main page")
+### Edit Item
 ![Wireframe / Site Diagram](static/images/edit-post.png "edit and my items")
+### Contact Us
 ![Wireframe / Site Diagram](static/images/contact-us.png "contact us")
+### About us
 ![Wireframe / Site Diagram](static/images/about-us.png "about us")
+### Database schema
 ![Wireframe / Site Diagram](static/images/data-base.png "data-base schema")
+
 ## Deployment
 
 I deployed the project on Heroku as follows:
@@ -160,18 +169,27 @@ Steps 1-6 were copied from [here](https://github.com/frankkode/buy_and_sell_mark
 7. Install the packages in requirements.txt by typing pip install -r requirements.txt in the CLI.
 8. Set the IP address to 127.0.0.1 and the PORT to 5000.
 
+## App Image
+### main page
 ![Wireframe / Site Diagram](static/images/main.png "main page")
+### Edit Post 
 ![Wireframe / Site Diagram](static/images/edit-post-app.png "edit post")
+### Sign up Form
 ![Wireframe / Site Diagram](static/images/signup.png "signup")
+### Login Form
 ![Wireframe / Site Diagram](static/images/login.png "login")
+### About us
 ![Wireframe / Site Diagram](static/images/about-us-app.png "about us")
+### Contact us
 ![Wireframe / Site Diagram](static/images/contact-us1.png "contact us")
+### Contact us
 ![Wireframe / Site Diagram](static/images/contact-us2.png "contact us")
+### Edit item
 ![Wireframe / Site Diagram](static/images/post-and-edit-form.png "post and edit form")
 
-##Credits
+## Credits
 
-###Media&code
+### Media&code
 ° The website images were taken from the following sources:
 
 ° contact and about us background  images  : Unsplash
@@ -180,6 +198,6 @@ Steps 1-6 were copied from [here](https://github.com/frankkode/buy_and_sell_mark
 ° contact form was taken from flask-mail
 
 
-##Acknowledgements
+### Acknowledgements
 ° Many thanks to my mentor Anthony Ngene for his helpful feedback and support during this project.
 ° Many thanks to CODE INSTITUTE support team mainly Niel,Haley and Samantha 
