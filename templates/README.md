@@ -182,5 +182,5 @@ Steps 1-6 were copied from [here](https://github.com/frankkode/buy_and_sell_mark
 
 
 ##Acknowledgements
-* Many thanks to my mentor Anthony Ngene for his helpful feedback and support during this project.
-* Many thanks to CODE INSTITUTE support team mainly Niel,Haley and Samantha 
+° Many thanks to my mentor Anthony Ngene for his helpful feedback and support during this project.
+° Many thanks to CODE INSTITUTE support team mainly Niel,Haley and Samantha 
