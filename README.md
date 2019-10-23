@@ -1,7 +1,7 @@
 # [buy-and-sell-market](http://buy-and-sell-market.herokuapp.com/)
 
- -** [Deployed app can be found here]: (http://buy-and-sell-market.herokuapp.com/)
- -** [Code can be found on github] : (https://github.com/frankkode/buy_and_sell_market)
+ - **[Deployed app can be found here]: (http://buy-and-sell-market.herokuapp.com/)
+ - **[Code can be found here] : (https://github.com/frankkode/buy_and_sell_market)
 
 INTRODUCTION:
 In this project I have created a FREE MARKET website to demonstrate my understanding of the flask-python microframework and mongodb databases. From a user perspective the website should allow them to view, add and edit posts and  also to view other peoples posts on the main page 
