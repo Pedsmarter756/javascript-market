@@ -4,9 +4,9 @@
   <nav class="filter-nav">
     <div class="nav-wrapper ">
       <a href="#" data-target="mobile-filter" class="sidenav-trigger "><i class="material-icons text-orange ">search</i></a>
-      <ul class="right hide-on-med-and-down" >
+      <ul class="right hide-on-med-and-down">
         {% for category in categories %}
-          <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect filter-btn waves-light z-depth-4 maroon btn underline">{{category.category_name}}</a></li>
+          <li><a href="{{url_for('filter_list', category_name=category.category_name)}}" class="waves-effect filter-btn waves-light z-depth-4 maroon btn underline-title">{{category.category_name}}</a></li>
         {% endfor %}
       </ul>
       <ul class="sidenav " id="mobile-filter">
