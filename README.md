@@ -1,7 +1,7 @@
 # [buy-and-sell-market](http://buy-and-sell-market.herokuapp.com/)
 
- - **[Deployed app can be found here]: (http://buy-and-sell-market.herokuapp.com/)
- - **[Code can be found here] : (https://github.com/frankkode/buy_and_sell_market)
+- **[Deployed app can be found here]: (http://buy-and-sell-market.herokuapp.com/)
+- **[Code can be found here] : (https://github.com/frankkode/buy_and_sell_market)
 
 INTRODUCTION:
 In this project I have created a FREE MARKET website to demonstrate my understanding of the flask-python microframework and mongodb databases. From a user perspective the website should allow them to view, add and edit posts and  also to view other peoples posts on the main page 
@@ -129,7 +129,7 @@ I conducted manual tests of the application as follows:
 
 ## WIREFLAME BY BALSAMIQ
 ### Main Page
-![Wireframe / Site Diagram](static/images/colling-page.png "main page")
+![Wireframe / Site Diagram](static/images/calling-page.png "main page")
 ### Edit Item
 ![Wireframe / Site Diagram](static/images/edit-post.png "edit and my items")
 ### Contact Us
@@ -171,7 +171,7 @@ Steps 1-6 were copied from [here](https://github.com/frankkode/buy_and_sell_mark
 
 ## App Image
 ### main page
-![Wireframe / Site Diagram](static/images/main.png "main page")
+![Wireframe / Site Diagram](static/images/main-page.png "main page")
 ### Edit Post 
 ![Wireframe / Site Diagram](static/images/edit-post-app.png "edit post")
 ### Sign up Form
