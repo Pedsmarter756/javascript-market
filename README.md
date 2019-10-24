@@ -1,7 +1,7 @@
 # [buy-and-sell-market](http://buy-and-sell-market.herokuapp.com/)
 
-- DEPLOYED APP CAN BE FOUND HERE: http://buy-and-sell-market.herokuapp.com/
-- CODE CAN BE FOUND HERE: https://github.com/frankkode/buy_and_sell_market
+- [DEPLOYED APP CAN BE FOUND HERE] (http://buy-and-sell-market.herokuapp.com/)
+- [CODE CAN BE FOUND HERE] (https://github.com/frankkode/buy_and_sell_market)
 
 INTRODUCTION:
 In this project I have created a FREE MARKET website to demonstrate my understanding of the flask-python microframework and mongodb databases. From a user perspective the website should allow them to view, add and edit posts and  also to view other peoples posts on the main page 
@@ -195,12 +195,12 @@ Steps 1-6 were copied from [here](https://github.com/frankkode/buy_and_sell_mark
 ### Media&code
 ## The website images were taken from the following sources:
 
-- contact and about us background  images  was taken from: (https://unsplash.com/)
-- pics on items was taken from : Google Image Search (https://www.google.com)
+- contact and about us background  images  was taken from:[UNSPLASH] (https://unsplash.com/)
+- pics on items was taken from : [Google] (https://www.google.com)
 
-- contact form was taken from flask-mail
+- contact form was taken from : [flask-mail](https://pythonhosted.org/Flask-Mail/)
 
 
 ### Acknowledgements
-- Many thanks to my mentor Anthony Ngene https://app.slack.com/client/T0L30B202/C0L316Z96/user_profile/UDNCUURHU for his helpful feedback and support during this project
+- Many thanks to my mentor [Anthony Ngene] (https://app.slack.com/client/T0L30B202/C0L316Z96/user_profile/UDNCUURHU) for his helpful feedback and support during this project
 - Many thanks to CODE INSTITUTE tutorial team mainly Niel,Haley and Samantha 
