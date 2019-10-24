@@ -53,8 +53,11 @@ was used to initialise some of the Materialize elements and ensure that they wor
 
 ### Code Validity
 
-I used the [W3C Markup Validation Service](https://validator.w3.org/) to check the HTML and the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS. 
-The W3C Markup Validation Service gives error messages for Flask Jinja code in the HTML files. 
+- I used the [W3C Markup Validation Service](https://validator.w3.org/) to check the HTML 
+- I used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS. 
+  The W3C Markup Validation Service gives error messages for Flask Jinja code in the HTML files.
+- i used pip8 online formatter (http://pep8online.com/) to check python indentation
+
 
 ### Automated Tests
 
@@ -190,12 +193,12 @@ Steps 1-6 were copied from [here](https://github.com/frankkode/buy_and_sell_mark
 ## Credits
 
 ### Media&code
-° The website images were taken from the following sources:
+## The website images were taken from the following sources:
 
-° contact and about us background  images  : Unsplash
-° pics on items was taken from : Google Image Search and splash
+- contact and about us background  images  was taken from: (https://unsplash.com/)
+- pics on items was taken from : Google Image Search (https://www.google.com)
 
-° contact form was taken from flask-mail
+- contact form was taken from flask-mail
 
 
 ### Acknowledgements
