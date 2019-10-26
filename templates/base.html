@@ -3,6 +3,7 @@
 
 <head>
   <title>BUSE MARKET</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Orbitron|Oswald&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Arizonia&display=swap" rel="stylesheet">
   
@@ -18,7 +19,8 @@
 
     <nav class="nav" role="navigation">
     <div class="nav-wrapper">
-      <a href="{{url_for('home')}}" class="brand-logo text-green accent-3 ">FREE MARKET</a>
+      <a href="{{url_for('home')}}" class="brand-logo text-green accent-3 hide-on-small-only">FREE-MARKET</a>
+      <a href="{{url_for('home')}}"  class="brand-logo text-green accent-3 hide-on-med-and-up col s12 m6">MARKET</a>
 
       <button onclick="topFunction()" id="myBtn" title="Go to top" class="pulse">Top</button>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger left"><i class="material-icons lime-text accent-3 ">menu</i></a>

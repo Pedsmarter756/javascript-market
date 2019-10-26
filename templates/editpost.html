@@ -59,10 +59,12 @@
             </div>
             <div id="field-section">
               <div id="form-field">
+              {% for technic in post.technics %}
                 <div class="input-field">
-                  <input type="text" placeholder="(eg:This item is brand new.or This item is in good condition.)" maxlength="30" class="validate" id="technic" name="technic" value="{{post.technic}}" required />
+                  <input type="text" placeholder="(eg:This item is brand new.or This item is in good condition.)" maxlength="30" class="validate" id="technic" name="technic" value="{{technic}}" required />
                   <label for="technic"> Description </label>
                 </div>
+                {% endfor %}
             </div>
               <div class="technic-btn">
                 <a class="btn waves-effect green waves-light" id="add-technic-btn">Add Technical info (optional)</a>

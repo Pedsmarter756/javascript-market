@@ -107,7 +107,7 @@ def insert_post():
         'year_modal': request.form.get('year'),
         'image': request.form.get('image'),
         'quantity': request.form.get('quantity'),
-        'technic': request.form.getlist('technic'),
+        'technics': request.form.getlist('technic'),
         'contact': request.form.get('contact'),
         'condition': request.form.get('condition'),
         'price': request.form.get('price'),
@@ -126,7 +126,7 @@ def update_post(post_id):
         'year_modal': request.form.get('year'),
         'image': request.form.get('image'),
         'quantity': request.form.get('quantity'),
-        'technic': request.form.getlist('technic'),
+        'technics': request.form.getlist('technic'),
         'contact': request.form.get('contact'),
         'condition': request.form.get('condition'),
         'price': request.form.get('price'),
@@ -241,6 +241,8 @@ def format_datetime(value, format='%d %b %Y %I:%M '):
     if value is None:
         return ''
     return value.strftime(format)
+
+
 
 if __name__ == '__main__':
     app.run(

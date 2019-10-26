@@ -113,6 +113,7 @@ nav .button-collapse {
 
 .post-detail-container {
   background-color: #ffffff;
+  width: 60%;
   margin: 40px;
   padding: 20px;
   border-radius: 4px;
@@ -184,6 +185,7 @@ a {
 
 .post-header {
   font-size: 2rem;
+  color: #610344;
   font-weight: 600;
 }
 
@@ -286,6 +288,10 @@ a {
     flex-direction: column;
   }
 
+  .Container {
+    width: 90%;
+  }
+
   .form_container {
     width: 90%;
   }
@@ -297,6 +303,49 @@ a {
   .post-header {
     text-align: center;
   }
+
+  .category {
+    margin: 0px 0px;
+  }
+
+  .post-detail-container {
+    background-color: #ffffff;
+    margin: 5px 5px;
+    padding: 0px;
+    width: 95%;
+    border-radius: 4px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-card {
+    background: #fff;
+    color: #000000;
+    border-radius: 4px;
+    height: 400px;
+    width: 350px;
+    padding: 10px;
+    margin: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /*Images*/
+  .post_image {
+    width: 300px;
+    height: 250px;
+    border-radius: 4px;
+    margin: 3px 0px 3px 0px;
+  }
+
+  .image {
+    width: 250px;
+    height: 350px;
+    border-radius: 4px;
+  }
+
+
 }
 
 

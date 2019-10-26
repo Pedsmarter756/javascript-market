@@ -16,7 +16,7 @@
       </ul>
     </div>
   </nav>
-  <p class="heading">{{category_name.category_name}}</p>
+  <p class="heading orange-text">{{category_name.category_name}}</p>
   <div class="flex-container">
     {% for post in posts %}
       {% if post.category == category_name.category_name %}
@@ -24,6 +24,7 @@
           <div class="post-card col s12 m6 l3">
             <h5 class="post-title">{{post.name}}</h5>
             <img src="{{post.image}}" alt="" class="post_image" />
+            <p class="post-stat"><i class="material-icons  orange-text">monetization_on</i> Price: {{post.price}}</p>
             <a href="{{url_for('post', post_id=post._id)}}" class="waves-effect view-post waves-light btn">View post</a>
           </div>
         </a>

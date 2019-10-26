@@ -16,18 +16,22 @@
       </ul>
     </div>
   </nav>
-<div class="flex-container">
+
+
+<div class="flex-container col s12 m6">
     {% for post in posts %}
       <a href="{{ url_for('post', post_id=post._id) }}">
-        <div class="post-card col s12 m6 l3">
+        <div class="post-card col s12 m6">
           <h5 class="post-title">{{post.name}}</h5>
-          <img src="{{post.image}}" alt="" class="post_image" />
+          <img src="{{post.image}}" alt="" class="post_image col s12 m6" />
           <p class=" "><i class="material-icons view-price center orange-text">monetization_on</i>Price: {{post.price}}</p>
           <a href="{{url_for('post', post_id=post._id)}}" class="waves-effect view-post center  waves-light btn">More Info<i class="material-icons  orange-text">trending_flat</i></a>
         </div>
       </a>
     {% endfor %}
-  </div>
-  
+
+</div>
+
+
 
 {% endblock %}
