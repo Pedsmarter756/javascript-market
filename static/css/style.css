@@ -283,6 +283,7 @@ a {
 
 @media only screen and (max-width: 660px) {
 
+
   .flex-container,
   .post-contents {
     flex-direction: column;
@@ -348,6 +349,18 @@ a {
 
 }
 
+/**
+.css_class {
+  width: 300px;
+  background-color: #fcf3f3;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  font-size: 1.1em;
+}
+*/
 
 #myBtn {
   display: none;
@@ -448,12 +461,13 @@ form label {
   font-weight: bold;
   display: block;
   padding: 10px 0;
+
 }
 
 form input#name,
 form input#email,
 form input#subject {
-  width: 400px;
+  width: 320px;
   background-color: #fafafa;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -464,7 +478,7 @@ form input#subject {
 }
 
 form textarea#message {
-  width: 500px;
+  width: 340px;
   height: 100px;
   background-color: #fafafa;
   -webkit-border-radius: 3px;
@@ -483,6 +497,7 @@ form input#submit {
   border-radius: 3px;
   border: 1px solid #d8d8d8;
   padding: 10px;
+  margin-bottom: 20px;
   font-weight: bold;
   text-align: center;
   color: #000000;

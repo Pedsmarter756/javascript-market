@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <div class="contact-back bg-image ">
 <div class="container text-black ">
     <div class="flex flex-wrap text-center text-black">
@@ -36,7 +37,6 @@ Interested in learning more about our services? Our Account Executives take the 
 
         <!-- FORM COLUMN -->
 
-        <div>
         
         
 <h2 class="underline-title orange-text">Email</h2>
@@ -61,30 +61,29 @@ Interested in learning more about our services? Our Account Executives take the 
     {% for message in form.message.errors %}
     <div class="flash">{{ message }}</div>
     {% endfor %}
-
+<div class="row col s12">
     <form action="{{ url_for('contact') }}" method=post>
     {{ form.hidden_tag() }}
 
     {{ form.name.label }}
-    {{ form.name }}
+    {{ form.name (class="css_class")}} 
 
     {{ form.email.label }}
-    {{ form.email }}
+    {{ form.email (class="css_class") }} 
 
     {{ form.subject.label }}
-    {{ form.subject }}
+    {{ form.subject (class="css_class")}}
 
     {{ form.message.label }}
-    {{ form.message }}
+    {{ form.message (class="css_class")}} 
 
     {{ form.submit }}
     </form>
+</div>
 {% endif %}
 
-        </div>
-
-    </div>
-    </div>
+</div>
+</div>
     <footer class="page-footer footer-contac">
         <div class="container">
             <div class="row">
