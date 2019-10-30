@@ -49,7 +49,7 @@ was used to initialise some of the Materialize elements and ensure that they wor
 - **[unittest](https://docs.python.org/2/library/unittest.html)** was used for automated testing of the Python code.
 
 ### Features Left to Implement
-- ***Additional search capabilities*** : In future I would like to impliment the ability to search by entering a certain word the search input.
+- ***Additional search capabilities*** : In future I would like to impliment the ability to search by entering a certain word in the search input.
 
 - ***Photo upload*** : In fiture i would like to give the user the ability to upload a photo file locally as opposed to a photo-url.
 
