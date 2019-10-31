@@ -3,13 +3,20 @@ from flask import Flask, render_template, redirect, request, url_for, \
     session, flash
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
-import bcrypt
+from flask_bcrypt import Bcrypt, check_password_hash, generate_password_hash
 from datetime import datetime
 from flask_mail import Mail, Message
 from forms import ContactForm
 from flask_wtf import Form
 
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
+
+pw_hash = generate_password_hash('hunter2', 10)
+
+
+
+
 
 # EMAIL SETTINGS
 
@@ -50,15 +57,15 @@ def home():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    if request.method == 'POST':
-        existing_user = \
-            users_collection.find_one({'name': request.form.get('username'
-                )})
-        if existing_user:
-            session['username'] = request.form.get('username')
-            return redirect('/loggedin/' + session['username'])
-        return redirect(url_for('signup'))
-    return render_template('login.html')
+   if request.method == 'POST':
+       existing_user = \
+           users_collection.find_one({'name': request.form.get('username'
+               )})
+       if existing_user: bcrypt.check_password_hash(pw_hash, 'password') # returns Trueecode(‘utf-8’)
+       session['username'] = request.form.get('username')
+       return redirect('/loggedin/' + session['username'])
+       return redirect(url_for('signup'))
+   return render_template('login.html')
 
 
 @app.route('/signup', methods=['POST', 'GET'])
@@ -68,10 +75,9 @@ def signup():
             users_collection.find_one({'name': request.form.get('username'
                 )})
         if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form.get('password'
-                    ).encode('utf-8'), bcrypt.gensalt())
+            
             users_collection.insert({'name': request.form.get('username'
-                                    ), 'password': hashpass})
+                                    ), 'password': request.form.get('pw_hash')})
             session['username'] = request.form.get('username')
             return redirect('/loggedin/' + session['username'])
     return render_template('signup.html')
@@ -242,10 +248,16 @@ def format_datetime(value, format='%d %b %Y %I:%M '):
         return ''
     return value.strftime(format)
 
-
-
 if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
         debug=False)
+
+
+
+
+"""
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8080,debug=True)
+"""
