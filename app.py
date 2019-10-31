@@ -3,16 +3,16 @@ from flask import Flask, render_template, redirect, request, url_for, \
     session, flash
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
-from flask_bcrypt import Bcrypt, check_password_hash, generate_password_hash
+import bcrypt
 from datetime import datetime
 from flask_mail import Mail, Message
 from forms import ContactForm
 from flask_wtf import Form
 
 app = Flask(__name__)
-bcrypt = Bcrypt(app)
 
-pw_hash = generate_password_hash('hunter2', 10)
+
+
 
 
 
@@ -52,32 +52,35 @@ def home():
     categories = list(categories_collection.find())
     posts = posts_collection.find().sort('_id', pymongo.DESCENDING)
     return render_template('home.html', posts=posts,
-                           categories=categories)
+                        categories=categories)
 
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-   if request.method == 'POST':
-       existing_user = \
-           users_collection.find_one({'name': request.form.get('username'
-               )})
-       if existing_user: bcrypt.check_password_hash(pw_hash, 'password') # returns Trueecode(‘utf-8’)
-       session['username'] = request.form.get('username')
-       return redirect('/loggedin/' + session['username'])
-       return redirect(url_for('signup'))
-   return render_template('login.html')
+    if request.method == 'POST':
+        users_collection = mongo.db.users
+        login_user = users_collection.find_one({'name' : request.form['username']})
+
+        if login_user:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password']) == login_user['password']:
+                session['username'] = request.form['username']
+                return redirect(url_for('home'))
+        return render_template('signup.html')
+    return render_template('login.html')
 
 
-@app.route('/signup', methods=['POST', 'GET'])
+    
+
+
+@app.route('/register', methods=['POST', 'GET'])
 def signup():
     if request.method == 'POST':
-        existing_user = \
-            users_collection.find_one({'name': request.form.get('username'
-                )})
+        users_collection = mongo.db.users
+        existing_user = users_collection.find_one({'name' : request.form['username']})
+
         if existing_user is None:
-            
-            users_collection.insert({'name': request.form.get('username'
-                                    ), 'password': request.form.get('pw_hash')})
+            hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
+            users_collection.insert({'name' : request.form['username'], 'password' : hashpass})
             session['username'] = request.form.get('username')
             return redirect('/loggedin/' + session['username'])
     return render_template('signup.html')
@@ -248,16 +251,10 @@ def format_datetime(value, format='%d %b %Y %I:%M '):
         return ''
     return value.strftime(format)
 
+
+
 if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
         debug=False)
-
-
-
-
-"""
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080,debug=True)
-"""
