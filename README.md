@@ -6,7 +6,7 @@
 INTRODUCTION:
 In this project I have created a FREE MARKET website to demonstrate my understanding of the flask-python microframework and mongodb databases. From a user perspective the website should allow them to view, add and edit posts and  also to view other peoples posts on the main page 
 ## UX
-This project is the assessment of the flask-python modules for the Full Stack Software Development  at Code Institute. I chose to create a web application that allows users to benefite from it. Each user should be able to Create, Read, Update, and Delete (CRUD) their own posts. Users can also be able to contact each other for free and features for a fee.
+This project is the assessment of the flask-python modules for the Full Stack Software Development  at Code Institute. I chose to create a web application that allows users to benefite from it. Each user should be able to Create, Read, Update, and Delete (CRUD) their own posts. Users can also be able to contact each other througt the self given contacts.
 
 User Stories
 "As a user, I want:"
@@ -27,7 +27,7 @@ to view posts of others
 - **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to set up the templates for the site.
 - **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the site content.
 - **[JavaScript](https://www.javascript.com/)** 
-I have used Javascript in the add/edit post forms to power the logic behind the 'Add information' and 'Remove information' buttons. I have also used this to create a validation error for the Materialize select component 
+I have used Javascript in the add/edit post forms to power the logic behind the 'Edit post' and 'view information' buttons. I have also used this to create a validation error for the Materialize select component 
 JS has also been used to power the sliding side menu action on smaller screen sizes
 was used to initialise some of the Materialize elements and ensure that they worked correctly.
 - **[Python](https://www.python.org/)** was used to write the app's logic.
@@ -48,6 +48,10 @@ was used to initialise some of the Materialize elements and ensure that they wor
 - **[Balsamic](https://balsamiq.cloud/spsngzf/pe97rf5/r2278)** was used to create the wireframes.
 - **[unittest](https://docs.python.org/2/library/unittest.html)** was used for automated testing of the Python code.
 
+### Features Left to Implement
+- ***Additional search capabilities*** : In future I would like to impliment the ability to search by entering a certain word in the search input.
+
+- ***Photo upload*** : In fiture i would like to give the user the ability to upload a photo file locally as opposed to a photo-url.
 
 ## Testing
 
