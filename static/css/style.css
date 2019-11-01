@@ -417,7 +417,7 @@ a {
 
 
 .w-full {
-  display: flexbox;
+  display: flex;
 }
 
 .center-title {
@@ -507,7 +507,7 @@ form input#submit {
   background-image: -moz-linear-gradient(top, #f4f4f4, #e5e5e5);
   background-image: -ms-linear-gradient(top, #f4f4f4, #e5e5e5);
   background-image: -o-linear-gradient(top, #f4f4f4, #e5e5e5);
-  background-image: linear-gradient(top, #f4f4f4, #e5e5e5);
+  background-image: linear-gradient(to top, #f4f4f4, #e5e5e5);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#f4f4f4, endColorstr=#e5e5e5);
 }
 
@@ -520,6 +520,6 @@ form input#submit:hover {
   background-image: -moz-linear-gradient(top, #dbdbdb, #cccccc);
   background-image: -ms-linear-gradient(top, #dbdbdb, #cccccc);
   background-image: -o-linear-gradient(top, #dbdbdb, #cccccc);
-  background-image: linear-gradient(top, #dbdbdb, #cccccc);
+  background-image: linear-gradient(to top, #dbdbdb, #cccccc);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#dbdbdb, endColorstr=#cccccc);
 }

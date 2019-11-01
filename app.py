@@ -10,14 +10,6 @@ from forms import ContactForm
 from flask_wtf import Form
 
 app = Flask(__name__)
-
-
-
-
-
-
-
-
 # EMAIL SETTINGS
 
 app.config.update(
@@ -43,44 +35,44 @@ mongo = PyMongo(app)
 users_collection = mongo.db.users
 posts_collection = mongo.db.posts
 categories_collection = mongo.db.categories
-
-
 # Routes
+
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
     categories = list(categories_collection.find())
     posts = posts_collection.find().sort('_id', pymongo.DESCENDING)
-    return render_template('home.html', posts=posts,
-                        categories=categories)
+    return render_template('home.html', posts=posts, categories=categories)
 
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
         users_collection = mongo.db.users
-        login_user = users_collection.find_one({'name' : request.form['username']})
+        login_user = users_collection.find_one({'name': request.form[
+            'username']})
 
         if login_user:
-            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password']) == login_user['password']:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'), 
+               login_user['password']) == login_user['password']:
                 session['username'] = request.form['username']
                 return redirect(url_for('home'))
         return render_template('signup.html')
     return render_template('login.html')
 
 
-    
-
-
 @app.route('/register', methods=['POST', 'GET'])
 def signup():
     if request.method == 'POST':
         users_collection = mongo.db.users
-        existing_user = users_collection.find_one({'name' : request.form['username']})
+        existing_user = users_collection.find_one({'name': request.form[
+            'username']})
 
         if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            users_collection.insert({'name' : request.form['username'], 'password' : hashpass})
+            hashpass = bcrypt.hashpw(request.form[
+                'password'].encode('utf-8'), bcrypt.gensalt())
+            users_collection.insert({'name': request.form[
+                'username'], 'password': hashpass})
             session['username'] = request.form.get('username')
             return redirect('/loggedin/' + session['username'])
     return render_template('signup.html')
@@ -88,10 +80,10 @@ def signup():
 
 @app.route('/loggedin/<username>', methods=['GET', 'POST'])
 def loggedin(username):
-    posts = posts_collection.find({'added_by': session['username'
-                                  ]}).sort('_id', pymongo.DESCENDING)
-    return render_template('profile.html', username=session['username'
-                           ], posts=posts)
+    posts = posts_collection.find({'added_by': session[
+        'username']}).sort('_id', pymongo.DESCENDING)
+    return render_template('profile.html', username=session[
+        'username'], posts=posts)
 
 
 @app.route('/logout')
@@ -169,8 +161,7 @@ def filter_list(category_name):
 
 @app.route('/categories')
 def categories():
-    categories = categories_collection.find().sort('_id',
-            pymongo.ASCENDING)
+    categories = categories_collection.find().sort('_id', pymongo.ASCENDING)
     return render_template('categories.html', categories=categories)
 
 
@@ -204,14 +195,15 @@ def edit_post(post_id):
 @app.route('/edit_category/<category_id>')
 def edit_category(category_id):
     return render_template('editcategory.html',
-                           category=categories_collection.find_one({'_id': ObjectId(category_id)}))
+                           category=categories_collection.find_one({
+                               '_id': ObjectId(category_id)}))
 
 
 @app.route('/update_category/<category_id>', methods=['POST'])
 def update_category(category_id):
     categories_collection.update({'_id': ObjectId(category_id)},
-                                 {'category_name': request.form['category_name'
-                                 ]})
+                                 {'category_name': request.form[
+                                     'category_name']})
     return redirect(url_for('categories'))
 
 
@@ -250,7 +242,6 @@ def format_datetime(value, format='%d %b %Y %I:%M '):
     if value is None:
         return ''
     return value.strftime(format)
-
 
 
 if __name__ == '__main__':
