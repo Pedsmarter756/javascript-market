@@ -281,7 +281,7 @@ a {
   margin-right: 10px;
 }
 
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 768px) {
 
 
   .flex-container,
@@ -349,18 +349,7 @@ a {
 
 }
 
-/**
-.css_class {
-  width: 300px;
-  background-color: #fcf3f3;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  border: 1px solid #cccccc;
-  padding: 5px;
-  font-size: 1.1em;
-}
-*/
+
 
 #myBtn {
   display: none;
