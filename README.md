@@ -91,33 +91,28 @@ I conducted manual tests of the application as follows:
     1. Navigate to the login page.
     2. Enter a correct username and password.
     
-    3. Ensure that I can add recipes and edit and delete posts submitted under that username, and that I can't edit or delete other users' posts.
-    5. Ensure that, when I click on the "My posts" link in the navbar, I see the list of my posts and no others.
+    3. Ensure that I can add a post and edit and delete post submitted under that username, and that I can't edit or delete other user's posts.
+    5. Ensure that, when I click on the "My items" link in the navbar, I see the list of my posts and no others.
     6. Click on the Logout link in the navbar and ensure that I'm logged out.
-    7. Enter a username that's not in the database and a password.
-    8. Ensure that I see a message saying that I've entered an incorrect username/password combination.
-    9. Enter a username that's in the database and an incorrect password.
-    10. Ensure that I see a message saying that I've entered an incorrect username/password combination.
+    7. Enter a username that's not in the database .
+    8. Ensure that i get redirected to registration form.
+    9. Enter a username that it is in the database and correct password.
+    10. Ensure that i get loged in on the free market.
 
-5. Adding posts
-    1. Click on the "Add item" link in the navbar.
+5. Adding posts 
+    1. Click on the "Add new item" link in the navbar.
     2. Ensure that the form appears correctly.
     3. Attempt to submit the form with required fields blank and ensure that I'm prompted to fill them.
     4. Submit a fully completed form.
-    5. Click on the link to the new post on the main page of posts insure that all information was submited correctry.
-    6. Ensure that the page showing that post loads correctly, with all entered details appearing.
+    5. Click on the button "Add" to the form of the post insure that all information was submited correctry.
+    6. Ensure that the page showing that post loads correctly, with all entered details appearing on the calling (home) page.
     7. Ensure that all the posts details have been saved in the database.
 
 
  
-7. Viewing categories
-    1. Click on the 'category' link in the navbar.
-    2. Ensure that all posts in the database are listed on the page that loads.
-    3. Click on each post in the list in turn
-    4. Ensure that all the posts details are displayed correctly on the page that loads.
-
-8. Editing post
-    1. Click on the Edit button at the bottom of a post displaying in your account.
+7.  Editing post
+    0. go to my items on the navbar link
+    1. Click on the Edit button at the bottom of a post 
     2. Ensure that the form for editing the post loads.
     3. Edit the post details.
     4. Click the Submit button.
@@ -125,12 +120,11 @@ I conducted manual tests of the application as follows:
     6. Repeat for all posts.
 
 9. Deleting posts
-    1. Click the Delete button at the bottom of the post on your acount page.
+    1. Click the Delete button at the bottom of the post .
     2. Ensure that a warning button appears, along with  cancel button 
     3. Click Cancel.
     4. Ensure that the page reloads correctly.
-    5. Click the Delete button again.
-    5. Click Confirm.
+    5. Click the Delete button .
     6. Ensure that the post is deleted from the database.
     7. Repeat for all posts.
 
