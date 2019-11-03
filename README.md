@@ -197,7 +197,8 @@ Steps 1-6 were copied from [here](https://github.com/frankkode/buy_and_sell_mark
 - pics on items was taken from : [Google](https://www.google.com)
 
 - contact form was taken from : [flask-mail](https://pythonhosted.org/Flask-Mail/)
-
+### Inspiration
+- the inspiration of this app is from :[dribbble](https://dribbble.com/shots/1435404-Property-List/attachments/211304)
 
 ### Acknowledgements
 - Many thanks to my mentor [Anthony Ngene](https://app.slack.com/client/T0L30B202/C0L316Z96/user_profile/UDNCUURHU) for his helpful feedback and support during this project
