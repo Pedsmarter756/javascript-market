@@ -74,59 +74,59 @@ I conducted automated testing of the app routes with unittests, and the tests ar
 I conducted manual tests of the application as follows:
 
 1. Cross-browser and Device Compatibility
-    1. Test the app on Chrome, Edge, Firefox Opera and Safari browsers to ensure that it works on all of them.
-    2. Test the app on a desktop, laptop, tablet and smartphone to ensure that it works on all devices.
+    - Test the app on Chrome, Edge, Firefox Opera and Safari browsers to ensure that it works on all of them.
+    - Test the app on a desktop, laptop, tablet and smartphone to ensure that it works on all devices.
 
 2. Responsiveness
-    1. View the app in responsive mode with Chrome Developer Tools to ensure that the size and position of elements adjusts correctly.
-    2. View the app on a desktop, laptop, tablet and smartphone to ensure that it displays correctly.
+    - View the app in responsive mode with Chrome Developer Tools to ensure that the size and position of elements adjusts correctly.
+    - View the app on a desktop, laptop, tablet and smartphone to ensure that it displays correctly.
 
 3. Registration
-    1. Navigate to the registration page.
-    2. Enter a username and password.
-    
-    3. get login form
+    - Navigate to the registration page.
+    - Enter a username and password.
+    - get registrad
+    - redirected to home page (with option to start post your items on navbar)
      
 4. Login
-    1. Navigate to the login page.
-    2. Enter a correct username and password.
-    
-    3. Ensure that I can add a post and edit and delete post submitted under that username, and that I can't edit or delete other user's posts.
-    5. Ensure that, when I click on the "My items" link in the navbar, I see the list of my posts and no others.
-    6. Click on the Logout link in the navbar and ensure that I'm logged out.
-    7. Enter a username that's not in the database .
-    8. Ensure that i get redirected to registration form.
-    9. Enter a username that it is in the database and correct password.
-    10. Ensure that i get loged in on the free market.
+    - Navigate to the login page.
+    - Enter a correct username and password.
+    - get loged in
+    - Ensure that I can add a post and edit and delete post submitted under that username, and that I can't edit or delete other user's posts.
+    - Ensure that, when I click on the "My items" link in the navbar, I see the list of my posts and no others.
+    - Click on the Logout link in the navbar and ensure that I'm logged out.
+    - Enter a username that's not in the database .
+    - Ensure that i get a registration form.
+    - Enter a username that it is in the database and correct password.
+    - Ensure that i get loged in on the free market.
 
 5. Adding posts 
-    1. Click on the "Add new item" link in the navbar.
-    2. Ensure that the form appears correctly.
-    3. Attempt to submit the form with required fields blank and ensure that I'm prompted to fill them.
-    4. Submit a fully completed form.
-    5. Click on the button "Add" to the form of the post insure that all information was submited correctry.
-    6. Ensure that the page showing that post loads correctly, with all entered details appearing on the calling (home) page.
-    7. Ensure that all the posts details have been saved in the database.
+    - Click on the "Add new item" link on the navbar.
+    - Ensure that the form appears correctly.
+    - Attempt to submit the form with required fields blank and ensure that I'm prompted to fill them.
+    - Submit a fully completed form.
+    - Click on the button "Add" to the form of the post insure that all information was submited correctry.
+    - Ensure that the page showing that post loads correctly, with all entered details appearing on the calling (home) page.
+    - Ensure that all the posts details have been saved in the database.
 
 
  
 7.  Editing post
-    0. go to my items on the navbar link
-    1. Click on the Edit button at the bottom of a post 
-    2. Ensure that the form for editing the post loads.
-    3. Edit the post details.
-    4. Click the Submit button.
-    5. Ensure that the post reloads and the edits have been saved to the database.
-    6. Repeat for all posts.
+    - go to "my items" button on the navbar link
+    - Click on the Edit button at the bottom of a post 
+    - Ensure that the form for editing the post loads.
+    - Edit the post details.
+    - Click the Submit button.
+    - Ensure that the post reloads and the edits have been saved to the database.
+    
 
 9. Deleting posts
-    1. Click the Delete button at the bottom of the post .
-    2. Ensure that a warning button appears, along with  cancel button 
-    3. Click Cancel.
-    4. Ensure that the page reloads correctly.
-    5. Click the Delete button .
-    6. Ensure that the post is deleted from the database.
-    7. Repeat for all posts.
+    - Click the Delete button at the bottom of the post .
+    - Ensure that a cancel button appears, along with  delete button 
+    - Click Cancel.
+    - Ensure that the page reloads correctly.
+    - Click the Delete button .
+    - Ensure that the post is deleted from the database.
+    
 
 ## WIREFLAME BY BALSAMIQ
 ### Main Page
