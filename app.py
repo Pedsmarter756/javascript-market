@@ -25,6 +25,7 @@ mail = Mail(app)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['MONGO_DBNAME'] = os.environ.get('MONGO_DBNAME')
 app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
+hash_salt = os.environ.get('HASH_SALT')
 
 date = datetime.now().strftime('%Y-%m-%d  %H:%M:%S')
 
@@ -53,8 +54,8 @@ def login():
             'username']})
 
         if login_user:
-            if bcrypt.hashpw(request.form['password'].encode('utf-8'), 
-               login_user['password']) == login_user['password']:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'),
+               hash_salt.encode('utf-8')) == login_user['password']:
                 session['username'] = request.form['username']
                 return redirect(url_for('home'))
         return render_template('signup.html')
@@ -70,7 +71,7 @@ def signup():
 
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form[
-                'password'].encode('utf-8'), bcrypt.gensalt())
+                'password'].encode('utf-8'), hash_salt.encode('utf-8'))
             users_collection.insert({'name': request.form[
                 'username'], 'password': hashpass})
             session['username'] = request.form.get('username')
@@ -217,7 +218,7 @@ def contact():
     form = ContactForm()
 
     if request.method == 'POST':
-        if form.validate() == False:
+        if form.validate() is False:
             flash('All fields are required.')
             return render_template('contact.html', form=form)
         else:
@@ -242,6 +243,7 @@ def format_datetime(value, format='%d %b %Y %I:%M '):
     if value is None:
         return ''
     return value.strftime(format)
+
 
 
 if __name__ == '__main__':
