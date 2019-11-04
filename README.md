@@ -201,5 +201,5 @@ Steps 1-6 were copied from [here](https://github.com/frankkode/buy_and_sell_mark
 - the inspiration of this app is from :[dribbble](https://dribbble.com/shots/1435404-Property-List/attachments/211304)
 
 ### Acknowledgements
-- Many thanks to my mentor [Anthony Ngene](https://app.slack.com/client/T0L30B202/C0L316Z96/user_profile/UDNCUURHU) for his helpful feedback and support during this project
+- Many thanks to my mentor [Anthony Ngene](https://github.com/tonymontaro) for his helpful feedback and support during this project
 - Many thanks to CODE INSTITUTE tutorial team mainly Niel,Haley and Samantha 
