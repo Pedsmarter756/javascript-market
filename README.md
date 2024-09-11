@@ -1,7 +1,7 @@
 # [buy-and-sell-market](http://buy-and-sell-market.herokuapp.com/)
 
 - [DEPLOYED APP CAN BE FOUND HERE](http://buy-and-sell-market.herokuapp.com/)
-- [CODE CAN BE FOUND HERE](https://github.com/frankkode/buy_and_sell_market)
+- [CODE CAN BE FOUND HERE](https://github.com/Pedsmarter756/buy_and_sell_market)
 
 INTRODUCTION:
 In this project I have created a FREE MARKET website to demonstrate my understanding of the flask-python microframework and mongodb databases. From a user perspective the website should allow them to view, add and edit posts and  also to view other peoples posts on the main page 
@@ -160,7 +160,7 @@ $ git push heroku master
 
 ### Running the Code Locally
 
-Steps 1-6 were copied from [here](https://github.com/frankkode/buy_and_sell_market)
+Steps 1-6 were copied from [here](https://github.com/Pedsmarter756/buy_and_sell_market)
 1. Under the repository name on GitHub, click Clone or download.
 2. In the Clone with HTTPs section, click the icon beside the URL to copy the clone URL for the repository.
 3. Change the current working directory to the location where you want the cloned directory to be made.
